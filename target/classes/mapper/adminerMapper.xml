@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keifer.Dao.AdminerDao">
+    <select id="findAll" resultType="adminer">
+        select * from k_table
+    </select>
+
+    <select id="findOne" resultType="adminer">
+        select * from k_table where id = #{id}
+    </select>
+
+    <insert id="add" parameterType="adminer">
+        insert into k_table values (#{name},#{age},#{birth},#{shcool},#{code},#{id})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.String">
+        delete from k_table where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="adminer">
+        update k_table set name = #{name},age=#{age},shcool=#{shcool} where id = #{id}
+    </update>
+
+    <update id="setId" parameterType="java.lang.String">
+
+    </update>
+
+</mapper>
